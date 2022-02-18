@@ -24,11 +24,12 @@ totalItems = len(itemList)
 countTotal = 0
 countBatch = 0
 batch = 23      #Set the batch size per cycle
+workers = 5
 
 while True:
     if countBatch < batch:
         batchList = itemList[countTotal:countTotal+batch]
-        main(batchList)
+        main(batchList, workers)
         countBatch += batch
         countTotal += batch
 
